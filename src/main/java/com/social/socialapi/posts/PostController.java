@@ -29,9 +29,9 @@ public class PostController {
         return postService.getPost(id);
     }
 
-    @PostMapping(path = "{user_id}")
-    public void createPost(@PathVariable("user_id") Integer user_id, @RequestBody Post post) {
-        postService.createPost(user_id, post.getBody());
+    @PostMapping
+    public void createPost(@RequestBody Post post) {
+        postService.createPost(post.getBody());
     }
 
     @PutMapping(path = "{id}")

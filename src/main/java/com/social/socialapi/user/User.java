@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.social.socialapi.posts.Post;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -43,6 +44,7 @@ public class User implements UserDetails {
     private String name;
 
     @NotNull
+    @Column(unique = true)
     private String email;
 
     private String password;
