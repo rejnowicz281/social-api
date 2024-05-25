@@ -17,6 +17,11 @@ import lombok.RequiredArgsConstructor;
 public class UserController {
     public final UserService userService;
 
+    @GetMapping
+    public List<User> getUsers() {
+        return userService.getUsers();
+    }
+
     @GetMapping("{user_id}/favorites")
     public List<User> getFavorites(@PathVariable("user_id") Integer user_id) {
         return userService.getFavorites(user_id);

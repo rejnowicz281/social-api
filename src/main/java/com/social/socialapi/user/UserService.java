@@ -13,6 +13,10 @@ import lombok.RequiredArgsConstructor;
 public class UserService {
     private final UserRepository userRepository;
 
+    public List<User> getUsers() {
+        return userRepository.findAll();
+    }
+
     public List<User> getFavorites(Integer user_id) {
         User user = userRepository.findById(user_id).orElseThrow();
 
